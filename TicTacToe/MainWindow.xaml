@@ -1,0 +1,38 @@
+﻿<Window x:Class="TicTacToe.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" SizeToContent="WidthAndHeight">
+    <StackPanel>
+        <TextBlock HorizontalAlignment="Center" FontSize="20" Text="{Binding Status}"/>
+        <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Width="200" Height="200" FontSize="80" Content="{Binding Content}" Click="Button_Click" Grid.Row="0" Grid.Column="0" DataContext="{Binding Board.CellsList[0]}"/>
+            <Button Width="200" Height="200" FontSize="80" Content="{Binding Content}" Click="Button_Click" Grid.Row="0" Grid.Column="1" DataContext="{Binding Board.CellsList[1]}"/>
+            <Button Width="200" Height="200" FontSize="80" Content="{Binding Content}" Click="Button_Click" Grid.Row="0" Grid.Column="2" DataContext="{Binding Board.CellsList[2]}"/>
+            <Button Width="200" Height="200" FontSize="80" Content="{Binding Content}" Click="Button_Click" Grid.Row="1" Grid.Column="0" DataContext="{Binding Board.CellsList[3]}"/>
+            <Button Width="200" Height="200" FontSize="80" Content="{Binding Content}" Click="Button_Click" Grid.Row="1" Grid.Column="1" DataContext="{Binding Board.CellsList[4]}"/>
+            <Button Width="200" Height="200" FontSize="80" Content="{Binding Content}" Click="Button_Click" Grid.Row="1" Grid.Column="2" DataContext="{Binding Board.CellsList[5]}"/>
+            <Button Width="200" Height="200" FontSize="80" Content="{Binding Content}" Click="Button_Click" Grid.Row="2" Grid.Column="0" DataContext="{Binding Board.CellsList[6]}"/>
+            <Button Width="200" Height="200" FontSize="80" Content="{Binding Content}" Click="Button_Click" Grid.Row="2" Grid.Column="1" DataContext="{Binding Board.CellsList[7]}"/>
+            <Button Width="200" Height="200" FontSize="80" Content="{Binding Content}" Click="Button_Click" Grid.Row="2" Grid.Column="2" DataContext="{Binding Board.CellsList[8]}"/>
+        </Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <ToggleButton Content="Easy" IsChecked="{Binding Easy}" Margin="5" ToolTip="AI makes moves randomly"/>
+            <ToggleButton Content="Medium" IsChecked="{Binding Medium}" Margin="5" ToolTip="AI randomly makes moves randomly or optimally (most fun; simulates human play)"/>
+            <ToggleButton Content="Hard" IsChecked="{Binding Hard}" Margin="5" ToolTip="AI makes optimal moves (unbeatable)"/>
+            <Button Content="Join" Click="Join_Click"/>
+            <Button Content="Host" Click="Host_Click"/>
+        </StackPanel>
+    </StackPanel>
+</Window>
